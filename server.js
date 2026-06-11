@@ -23,3 +23,9 @@ app.get("/welcome", (req, res) => {
   console.error("Welcome=>", process.env.NAME);
   res.send(`Welcome ${process.env.NAME}`);
 });
+
+app.use(express.static(path.join(__dirname, "/client/dist")));
+
+app.get("/*any", (_req, res) => {
+  res.sendFile(path.resolve(__dirname, "./client/dist", "index.html"));
+});
