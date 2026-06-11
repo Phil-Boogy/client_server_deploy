@@ -13,7 +13,7 @@ function App() {
   // useEffect(() => fetchData(), []);
 
   const fetchData = () => {
-    fetch(`${URL}/me/${name}`)
+    fetch(`/me/${name}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data.msg);
